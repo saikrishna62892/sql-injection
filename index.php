@@ -46,7 +46,7 @@
 			<div class="column">
 				<div class="container-login100">
 					<div class="wrap-login100 p-b-90">
-						<form class="login100-form validate-form flex-sb flex-w" action="index1.php" method="post">
+						<form class="login100-form validate-form flex-sb flex-w" action="login_after.php" method="post">
 							<span class="login100-form-title p-b-10">
 								Login
 							</span>

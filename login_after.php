@@ -42,11 +42,12 @@
 			<a href="index.php" style="color: #5768ad;font-size: 17px;"><u>Home</u></a>&emsp;&emsp;
 			<a href="registration.php" style="color: #5768ad;font-size: 17px;"><u>Data Entry</u></a>&emsp;&emsp;
 		</div>
+		<marquee>Simulation Results for SQL Injection Attack</marquee>
 		<div class="row">
 			<div class="column">
 				<div class="container-login100">
 					<div class="wrap-login100 p-b-90">
-						<form class="login100-form validate-form flex-sb flex-w" action="connect.php" method="post">
+						<form class="login100-form validate-form flex-sb flex-w" action="login_after.php" method="post">
 							<span class="login100-form-title p-b-10">
 								Login
 							</span>
@@ -88,19 +89,25 @@
 					    </thead>
 					    <tbody>
 							<?php
+
 								//Database Connection
-								$conn = new mysqli('localhost','root','','sql-injection-test');
+								$conn = new mysqli('localhost','root','root','sql-injection-test');
 								if($conn->connect_error){
 									echo "$conn->connect_error";
-									die("Connection Failed Dude : ". $conn->connect_error);
+									die("Connection Failed : ". $conn->connect_error);
 								} else {
-									$sql = "SELECT * FROM USERS";
-									$result = $conn->query($sql);
-
-									if($result->num_rows >0){
-										while($row = $result->fetch_assoc()){
-											echo "username : ".$row['username'];
+									$sql = mysqli_query($conn,"SELECT * FROM users WHERE username = '".$_POST['username']."' and password = '".$_POST['password']."'");
+									$row = mysqli_num_rows($sql);	
+									if($row >0){
+										while($row = $sql->fetch_assoc()){
+											echo "<tr><td>".$row['username']."</td>";
+											echo "<td>".$row['password']."</td>";
+											echo "<td>".$row['email']."</td>";
+											echo "<td>".$row['salary']."</td></tr>";
 										}
+									}
+									else{
+										echo "<td>No Data Found!..</td>";
 									}
 									$conn->close();
 								}
