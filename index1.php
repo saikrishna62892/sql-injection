@@ -46,7 +46,7 @@
 			<div class="column">
 				<div class="container-login100">
 					<div class="wrap-login100 p-b-90">
-						<form class="login100-form validate-form flex-sb flex-w" action="index1.php" method="post">
+						<form class="login100-form validate-form flex-sb flex-w" action="connect.php" method="post">
 							<span class="login100-form-title p-b-10">
 								Login
 							</span>
@@ -87,7 +87,25 @@
 					      </tr>
 					    </thead>
 					    <tbody>
-						<td align="center" colspan="4">No Data Currently Available...</td>
+							<?php
+								//Database Connection
+								$conn = new mysqli('localhost','root','','sql-injection-test');
+								if($conn->connect_error){
+									echo "$conn->connect_error";
+									die("Connection Failed Dude : ". $conn->connect_error);
+								} else {
+									$sql = "SELECT * FROM USERS";
+									$result = $conn->query($sql);
+
+									if($result->num_rows >0){
+										while($row = $result->fetch_assoc()){
+											echo "username : ".$row['username'];
+										}
+									}
+									$conn->close();
+								}
+
+							?>
 					    </tbody>
 					  </table>
 					</div>

@@ -30,71 +30,50 @@
 <body>
 	
 	<div class="limiter">
-		<div class="container">
-			<img src="images/sql-injection.jpg" height="300" alt="SQL-Injection Attack">
-			<div class="centered">
-			  	<span class="login100-form-title1 p-b-51" style="text-shadow: 1px 1px 0px #fff;">
-					SQL Injection Attack
-				</span>
-			</div>
-		</div>
+	  	<span class="login100-form-title1 p-b-51" style="text-shadow: 1px 1px 0px #fff;">
+			SQL Injection Attack
+		</span>
 		<div align="right">
 			<a href="index.php" style="color: #5768ad;font-size: 17px;"><u>Home</u></a>&emsp;&emsp;
 			<a href="registration.php" style="color: #5768ad;font-size: 17px;"><u>Data Entry</u></a>&emsp;&emsp;
 		</div>
-		<div class="row">
-			<div class="column">
-				<div class="container-login100">
-					<div class="wrap-login100 p-b-90">
-						<form class="login100-form validate-form flex-sb flex-w" action="index1.php" method="post">
-							<span class="login100-form-title p-b-10">
-								Login
-							</span>
-							<div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
-								<input class="input100" type="text" name="username" placeholder="Username">
-								<span class="focus-input100"></span>
-							</div>
-							
-							
-							<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-								<input class="input100" type="password" name="password" placeholder="Password">
-								<span class="focus-input100"></span>
-							</div>
-							
-
-							<div class="container-login100-form-btn m-t-17">
-								<button class="login100-form-btn">
-									Submit
-								</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-			<div class="column">
-				<div class="container-login100">
+		<div class="container-login100">
+			<div class="wrap-login100 p-b-90">
+				<form class="login100-form validate-form flex-sb flex-w" action="connect.php" method="post">
 					<span class="login100-form-title p-b-10">
-						Simulation Results
+						User Data Entry
 					</span>
-
-					<table class="table">
-					    <thead class="thead-light">
-					      <tr>
-					        <th>User Name</th>
-					        <th>Password</th>
-					        <th>Email</th>
-					        <th>Salary</th>
-					      </tr>
-					    </thead>
-					    <tbody>
-						<td align="center" colspan="4">No Data Currently Available...</td>
-					    </tbody>
-					  </table>
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
+						<input class="input100" type="text" name="username" placeholder="Username" required>
+						<span class="focus-input100"></span>
 					</div>
-				</div>
+					
+					
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+						<input class="input100" type="text" name="password" placeholder="Password" required>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Email is required">
+						<input class="input100" type="text" name="email" placeholder="Email" required>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Salary required">
+						<input class="input100" type="number" name="salary" placeholder="Salary" min="0" required>
+						<span class="focus-input100"></span>
+					</div>
+					
+
+					<div class="container-login100-form-btn m-t-17">
+						<button class="login100-form-btn">
+							Submit Details
+						</button>
+					</div>
+				</form>
 			</div>
 		</div>
-
+			</div>
 	<div id="dropDownSelect1"></div>
 	
 <!--===============================================================================================-->
