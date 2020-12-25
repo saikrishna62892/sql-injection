@@ -44,7 +44,7 @@
 				$email = $_POST['email'];
 				$salary = $_POST['salary'];
 				// Database connection
-				$conn = new mysqli('localhost','root','root','sql-injection-test');
+				$conn = new mysqli('z3iruaadbwo0iyfp.cbetxkdyhwsb.us-east-1.rds.amazonaws.com','cruv7njnzdu1t3v5','rmcxxt6x5ngety2j','p64un4s1e7qam7sg');
 				if($conn->connect_error){
 					echo "$conn->connect_error";
 					die("Connection Failed : ". $conn->connect_error);
