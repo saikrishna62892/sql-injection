@@ -78,44 +78,46 @@
 						Simulation Results
 					</span>
 
-					<table class="table">
-					    <thead class="thead-light">
-					      <tr>
-					        <th>User Name</th>
-					        <th>Password</th>
-					        <th>Email</th>
-					        <th>Salary</th>
-					      </tr>
-					    </thead>
-					    <tbody>
-							<?php
+					<div class="table-responsive">
+						<table class="table table-hover">
+						    <thead class="thead-light">
+						      <tr>
+						        <th>User Name</th>
+						        <th>Password</th>
+						        <th>Email</th>
+						        <th>Salary</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+								<?php
 
-								//Database Connection
-						    		//mysqli('z3iruaadbwo0iyfp.cbetxkdyhwsb.us-east-1.rds.amazonaws.com','cruv7njnzdu1t3v5','rmcxxt6x5ngety2j','p64un4s1e7qam7sg');
-								$conn = new mysqli('z3iruaadbwo0iyfp.cbetxkdyhwsb.us-east-1.rds.amazonaws.com','cruv7njnzdu1t3v5','rmcxxt6x5ngety2j','p64un4s1e7qam7sg');;
-								if($conn->connect_error){
-									echo "$conn->connect_error";
-									die("Connection Failed : ". $conn->connect_error);
-								} else {
-									$sql = mysqli_query($conn,"SELECT * FROM users WHERE username = '".$_POST['username']."' and password = '".$_POST['password']."'");
-									$row = mysqli_num_rows($sql);	
-									if($row >0){
-										while($row = $sql->fetch_assoc()){
-											echo "<tr><td>".$row['username']."</td>";
-											echo "<td>".$row['password']."</td>";
-											echo "<td>".$row['email']."</td>";
-											echo "<td>".$row['salary']."</td></tr>";
+									//Database Connection
+							    		//mysqli('z3iruaadbwo0iyfp.cbetxkdyhwsb.us-east-1.rds.amazonaws.com','cruv7njnzdu1t3v5','rmcxxt6x5ngety2j','p64un4s1e7qam7sg');
+									$conn = new mysqli('z3iruaadbwo0iyfp.cbetxkdyhwsb.us-east-1.rds.amazonaws.com','cruv7njnzdu1t3v5','rmcxxt6x5ngety2j','p64un4s1e7qam7sg');;
+									if($conn->connect_error){
+										echo "$conn->connect_error";
+										die("Connection Failed : ". $conn->connect_error);
+									} else {
+										$sql = mysqli_query($conn,"SELECT * FROM users WHERE username = '".$_POST['username']."' and password = '".$_POST['password']."'");
+										$row = mysqli_num_rows($sql);	
+										if($row >0){
+											while($row = $sql->fetch_assoc()){
+												echo "<tr><td>".$row['username']."</td>";
+												echo "<td>".$row['password']."</td>";
+												echo "<td>".$row['email']."</td>";
+												echo "<td>".$row['salary']."</td></tr>";
+											}
 										}
+										else{
+											echo "<td>No Data Found!..</td>";
+										}
+										$conn->close();
 									}
-									else{
-										echo "<td>No Data Found!..</td>";
-									}
-									$conn->close();
-								}
 
-							?>
-					    </tbody>
-					  </table>
+								?>
+						    </tbody>
+						  </table>
+						</div>
 					</div>
 				</div>
 			</div>
