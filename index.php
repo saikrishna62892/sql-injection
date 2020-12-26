@@ -76,20 +76,21 @@
 					<span class="login100-form-title p-b-10">
 						Simulation Results
 					</span>
-
-					<table class="table">
-					    <thead class="thead-light">
-					      <tr>
-					        <th>User Name</th>
-					        <th>Password</th>
-					        <th>Email</th>
-					        <th>Salary</th>
-					      </tr>
-					    </thead>
-					    <tbody>
-						<td align="center" colspan="4">No Data Currently Available...</td>
-					    </tbody>
-					  </table>
+					<div class="table-responsive">
+						<table class="table table-hover">
+						    <thead class="thead-light">
+						      <tr>
+						        <th>User Name</th>
+						        <th>Password</th>
+						        <th>Email</th>
+						        <th>Salary</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+							<td align="center" colspan="4">No Data Currently Available...</td>
+						    </tbody>
+						  </table>
+						</div>
 					</div>
 				</div>
 			</div>
